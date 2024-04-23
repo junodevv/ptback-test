@@ -1,5 +1,5 @@
 # 기본이미지
-FROM 2juno/ptman-server-test:latest
+FROM krmp-d2hub-idock.9rum.cc/goorm/gradle:7.3.1-jdk17
 # 워크 디렉토리
 WORKDIR /home/project
 # Spring 소스 코드를 이미지에 복사
