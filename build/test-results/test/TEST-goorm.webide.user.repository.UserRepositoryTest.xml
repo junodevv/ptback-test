@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="goorm.webide.user.repository.UserRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-23T02:11:36" hostname="ijun-oui-MacBookPro.local" time="0.053">
+  <properties/>
+  <testcase name="entity 저장 테스트" classname="goorm.webide.user.repository.UserRepositoryTest" time="0.053"/>
+  <system-out><![CDATA[2024-04-23T11:11:36.055+09:00  INFO 28032 --- [web-ide] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [goorm.webide.user.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-23T11:11:36.059+09:00  INFO 28032 --- [web-ide] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration goorm.webide.WebIdeApplication for test class goorm.webide.user.repository.UserRepositoryTest
+Hibernate: insert into user (created_at,delete_status,email,nickname,password,updated_at,username) values (?,?,?,?,?,?,?)
+user1 = User(userNo=1, username=test1234, password=test123@#, email=test123@gmail.com, nickname=leejuno, createdAt=2024-04-23T11:11:36.069724, updatedAt=2024-04-23T11:11:36.069724, deleteStatus=ACTIVE, chatUsers=null, chats=null)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

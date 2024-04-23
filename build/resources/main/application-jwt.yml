@@ -1,0 +1,8 @@
+# 암호화키
+spring:
+  jwt:
+    secret: vmfhaltmskdlstkfkdgodyroqkfwkdbalroqkfwkdbalaawwaqweraaasdfabbbbb
+# 시큐리티용 로깅 설정
+logging:
+  level:
+    org.springframework.web: DEBUG

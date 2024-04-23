@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="goorm.webide.chat.service.ChatRoomServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-04-23T02:11:35" hostname="ijun-oui-MacBookPro.local" time="0.043">
+  <properties/>
+  <testcase name="createChatRoomTest()" classname="goorm.webide.chat.service.ChatRoomServiceTest" time="0.032"/>
+  <testcase name="findAllRoomsTest()" classname="goorm.webide.chat.service.ChatRoomServiceTest" time="0.003"/>
+  <testcase name="deleteRoomByRoomNo()" classname="goorm.webide.chat.service.ChatRoomServiceTest" time="0.003"/>
+  <testcase name="findAllRoomsByUserIdTest()" classname="goorm.webide.chat.service.ChatRoomServiceTest" time="0.003"/>
+  <system-out><![CDATA[2024-04-23T11:11:35.052+09:00  INFO 28032 --- [web-ide] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [goorm.webide.chat.service.ChatRoomServiceTest]: ChatRoomServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-04-23T11:11:35.056+09:00  INFO 28032 --- [web-ide] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration goorm.webide.WebIdeApplication for test class goorm.webide.chat.service.ChatRoomServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-04-23T11:11:35.066+09:00  INFO 28032 --- [web-ide] [    Test worker] g.w.chat.service.ChatRoomServiceTest     : Starting ChatRoomServiceTest using Java 19 with PID 28032 (started by leejuno in /Users/leejuno/git/web-ide/BE/web-ide)
+2024-04-23T11:11:35.066+09:00  INFO 28032 --- [web-ide] [    Test worker] g.w.chat.service.ChatRoomServiceTest     : The following 3 profiles are active: "dev", "info", "jwt"
+2024-04-23T11:11:35.066+09:00 DEBUG 28032 --- [web-ide] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2f7e2481
+2024-04-23T11:11:35.117+09:00  INFO 28032 --- [web-ide] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-23T11:11:35.123+09:00  INFO 28032 --- [web-ide] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 4 JPA repository interfaces.
+2024-04-23T11:11:35.216+09:00  INFO 28032 --- [web-ide] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-23T11:11:35.217+09:00  INFO 28032 --- [web-ide] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-04-23T11:11:35.219+09:00  INFO 28032 --- [web-ide] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-23T11:11:35.219+09:00  INFO 28032 --- [web-ide] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-04-23T11:11:35.233+09:00  INFO 28032 --- [web-ide] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53fd061d
+2024-04-23T11:11:35.233+09:00  INFO 28032 --- [web-ide] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-04-23T11:11:35.234+09:00  WARN 28032 --- [web-ide] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-23T11:11:35.273+09:00  INFO 28032 --- [web-ide] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: alter table chat drop foreign key FKjwoyh4o9w6xhpypqackr104kr
+Hibernate: alter table chat drop foreign key FKe75tu2pd7wf7wowpy8r5nagfh
+Hibernate: alter table chat_user drop foreign key FK91s6pimvcq0hfo8x2t9tb4xbm
+Hibernate: alter table chat_user drop foreign key FKl8wenfyq53c3kx77epe01wb9g
+Hibernate: drop table if exists chat
+Hibernate: drop table if exists chat_room
+Hibernate: drop table if exists chat_user
+Hibernate: drop table if exists user
+Hibernate: create table chat (chat_no bigint not null auto_increment, created_at datetime(6) not null, room_no bigint not null, update_at datetime(6) not null, user_no bigint not null, chat_txt json, primary key (chat_no)) engine=InnoDB
+Hibernate: create table chat_room (created_at datetime(6) not null, room_no bigint not null auto_increment, update_at datetime(6) not null, room_name varchar(20) not null, primary key (room_no)) engine=InnoDB
+Hibernate: create table chat_user (chat_user_no bigint not null auto_increment, room_no bigint not null, user_no bigint not null, primary key (chat_user_no)) engine=InnoDB
+Hibernate: create table user (created_at datetime(6), updated_at datetime(6), user_no bigint not null auto_increment, email varchar(255) not null, nickname varchar(255) not null, password varchar(255) not null, username varchar(255) not null, delete_status enum ('DELETE','ACTIVE'), primary key (user_no)) engine=InnoDB
+Hibernate: alter table chat add constraint FKjwoyh4o9w6xhpypqackr104kr foreign key (room_no) references chat_room (room_no)
+Hibernate: alter table chat add constraint FKe75tu2pd7wf7wowpy8r5nagfh foreign key (user_no) references user (user_no)
+Hibernate: alter table chat_user add constraint FK91s6pimvcq0hfo8x2t9tb4xbm foreign key (room_no) references chat_room (room_no)
+Hibernate: alter table chat_user add constraint FKl8wenfyq53c3kx77epe01wb9g foreign key (user_no) references user (user_no)
+2024-04-23T11:11:35.471+09:00  INFO 28032 --- [web-ide] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-23T11:11:35.504+09:00 DEBUG 28032 --- [web-ide] [    Test worker] o.s.w.s.s.s.WebSocketHandlerMapping      : Patterns [/sendChat/**] in 'stompWebSocketHandlerMapping'
+2024-04-23T11:11:35.510+09:00  WARN 28032 --- [web-ide] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-23T11:11:35.513+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .WebSocketAnnotationMethodMessageHandler : 
+	g.w.c.c.ChatController:
+	
+2024-04-23T11:11:35.513+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .WebSocketAnnotationMethodMessageHandler : 
+	g.w.c.c.ChatRoomController:
+	
+2024-04-23T11:11:35.513+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .WebSocketAnnotationMethodMessageHandler : 
+	g.w.c.s.StompWebSocketController:
+	{[MESSAGE],[/sendChat/{roomNo}]}: sendChat(ChatRequest,Long)
+2024-04-23T11:11:35.513+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .WebSocketAnnotationMethodMessageHandler : 
+	g.w.u.c.UserController:
+	
+2024-04-23T11:11:35.514+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .WebSocketAnnotationMethodMessageHandler : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	
+2024-04-23T11:11:35.525+09:00 DEBUG 28032 --- [web-ide] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2024-04-23T11:11:35.529+09:00 DEBUG 28032 --- [web-ide] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-04-23T11:11:35.532+09:00  INFO 28032 --- [web-ide] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f9083b4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40f40221, org.springframework.security.web.context.SecurityContextHolderFilter@401e36ab, org.springframework.security.web.header.HeaderWriterFilter@5ed83e36, org.springframework.web.filter.CorsFilter@16441c13, org.springframework.security.web.authentication.logout.LogoutFilter@d7645b2, goorm.webide.common.jwt.JWTFilter@6d3b59e2, goorm.webide.common.jwt.LoginFilter@164dfad2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ce66169, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53d0cf4d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76480730, org.springframework.security.web.session.SessionManagementFilter@2459715c, org.springframework.security.web.access.ExceptionTranslationFilter@732ffb6a, org.springframework.security.web.access.intercept.AuthorizationFilter@279b83ea]
+2024-04-23T11:11:35.543+09:00 DEBUG 28032 --- [web-ide] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-04-23T11:11:35.545+09:00 DEBUG 28032 --- [web-ide] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : clientOutboundChannel added SubProtocolWebSocketHandler[StompSubProtocolHandler[v10.stomp, v11.stomp, v12.stomp]]
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : clientInboundChannel added WebSocketAnnotationMethodMessageHandler[prefixes=[/app/]]
+2024-04-23T11:11:35.557+09:00  INFO 28032 --- [web-ide] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : clientInboundChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@309e874]
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : brokerChannel added SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@309e874]
+2024-04-23T11:11:35.557+09:00  INFO 28032 --- [web-ide] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@309e874]]
+2024-04-23T11:11:35.557+09:00  INFO 28032 --- [web-ide] [    Test worker] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : clientInboundChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2024-04-23T11:11:35.557+09:00 DEBUG 28032 --- [web-ide] [    Test worker] org.springframework.web.SimpLogging      : brokerChannel added UserDestinationMessageHandler[DefaultUserDestinationResolver[prefix=/user/]]
+2024-04-23T11:11:35.558+09:00  INFO 28032 --- [web-ide] [    Test worker] g.w.chat.service.ChatRoomServiceTest     : Started ChatRoomServiceTest in 0.501 seconds (process running for 2.844)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

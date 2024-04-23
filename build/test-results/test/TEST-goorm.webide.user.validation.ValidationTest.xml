@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="goorm.webide.user.validation.ValidationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-23T02:11:36" hostname="ijun-oui-MacBookPro.local" time="0.021">
+  <properties/>
+  <testcase name="회원가입 요청 Validation 테스트" classname="goorm.webide.user.validation.ValidationTest" time="0.021"/>
+  <system-out><![CDATA[violation = ConstraintViolationImpl{interpolatedMessage='잘못된 비밀번호 형식입니다. 영문자, 숫자, 특수문자를 모두 1개 이상 조합한 8자~20자를 입력해주세요.', propertyPath=password, rootBeanClass=class goorm.webide.user.dto.request.RegisterRequest, messageTemplate='잘못된 비밀번호 형식입니다. 영문자, 숫자, 특수문자를 모두 1개 이상 조합한 8자~20자를 입력해주세요.'}
+violation.getMessage() = 잘못된 비밀번호 형식입니다. 영문자, 숫자, 특수문자를 모두 1개 이상 조합한 8자~20자를 입력해주세요.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
