@@ -3,8 +3,8 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-#  - mariadb.yaml
-#configMapGenerator:
-#  - name: init-db
-#    files:
-#      - configs/init.sql
+  - mysql.yaml
+configMapGenerator:
+  - name: init-db
+    files:
+      - configs/ptmanDB_chat_user_init.sql

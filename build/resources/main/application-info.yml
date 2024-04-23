@@ -2,14 +2,13 @@ spring:
   # DB 연결
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    ####테스트중 번호 임의 변경#### 3307, ptmanDB,
-    url: jdbc:mysql://localhost:3306/ptmanDB?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    url: ${DATABASE_URL}?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: password
   # jpa
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     show-sql: true
     properties:
       hibernate:
