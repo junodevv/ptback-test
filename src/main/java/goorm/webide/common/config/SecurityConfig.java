@@ -41,7 +41,7 @@ public class SecurityConfig {
 
                                 CorsConfiguration configuration = new CorsConfiguration();
                                 // 허용할 front단의 주소
-                                configuration.setAllowedOrigins(Collections.singletonList("*")); // 테스트 동안 모든 요청 허용
+                                configuration.setAllowedOriginPatterns(Collections.singletonList("*")); // 테스트 동안 모든 요청 허용
                                 // 허용 메소드 : all
                                 configuration.setAllowedMethods(Collections.singletonList("*"));
                                 configuration.setAllowCredentials(true);
